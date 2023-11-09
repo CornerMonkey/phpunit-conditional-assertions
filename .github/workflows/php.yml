@@ -46,10 +46,10 @@ jobs:
 
     - name: Declare required PHPUnit version
       run: |
-        composer require --no-update --dev phpunit/phpunit ~${{ matrix.phpunit }}
+        composer require --no-update phpunit/phpunit ~${{ matrix.phpunit }}
 
     - name: Install dependencies
-      run: composer install --prefer-dist --no-progress --no-suggest
+      run: composer install --prefer-dist --no-progress --no-suggest --no-dev
 
     - name: Run test suite
       run: composer run-script test:unit
